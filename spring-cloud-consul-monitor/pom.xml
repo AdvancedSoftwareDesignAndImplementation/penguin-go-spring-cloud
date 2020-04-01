@@ -40,7 +40,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-turbine</artifactId>
-			<exclusions>  
+			<exclusions>  <!-- 要排除默认的euraka包，否则添加turbine会与consul冲突 -->
 				 <exclusion>	 
 					  <groupId>org.springframework.cloud</groupId>
 					  <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
