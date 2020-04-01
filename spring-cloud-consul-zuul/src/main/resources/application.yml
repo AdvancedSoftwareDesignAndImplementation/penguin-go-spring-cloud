@@ -1,0 +1,25 @@
+server:
+  port: 8541
+spring:
+  application:
+    name: spring-cloud-consul-zuul
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name}	# 注册到consul的服务名称
+#Zuul默认实现了很多Filter，如ServletDetectionFilter、FormBodyWrapperFilter
+#禁用指定的Filter
+#zuul:
+#  SendResponseFilter:
+#    post:
+#      disable: true
+zuul:
+  routes:
+    ribbon:
+      path: /ribbon/**
+      serviceId: spring-cloud-consul-consumer  # 转发到消费者 /ribbon/
+    feign:
+      path: /feign/**
+      serviceId: spring-cloud-consul-consumer  # 转发到消费者 /feign/
