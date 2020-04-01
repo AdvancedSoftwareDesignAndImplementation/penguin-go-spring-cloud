@@ -9,7 +9,8 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class CallHelloController {
-
+	
+	// 均衡负载
     @Autowired
     private LoadBalancerClient loadBalancer;
 
