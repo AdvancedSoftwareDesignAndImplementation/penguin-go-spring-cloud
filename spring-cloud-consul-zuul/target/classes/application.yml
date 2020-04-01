@@ -15,11 +15,12 @@ spring:
 #  SendResponseFilter:
 #    post:
 #      disable: true
-zuul:
-  routes:
-    ribbon:
-      path: /ribbon/**
-      serviceId: spring-cloud-consul-consumer  # 转发到消费者 /ribbon/
-    feign:
-      path: /feign/**
-      serviceId: spring-cloud-consul-consumer  # 转发到消费者 /feign/
+
+#zuul:
+#  routes:
+#    ribbon:
+#      path: /ribbon/**
+#      serviceId: spring-cloud-consul-consumer  # 转发到消费者 /ribbon/
+#    feign:
+#      path: /feign/**
+#      serviceId: spring-cloud-consul-consumer  # 转发到消费者 /feign/
