@@ -1,10 +1,12 @@
 spring:
+  application:
+    name: spring-cloud-config-client
   cloud:
     consul:
       host: localhost
       port: 8500
       discovery:
-        serviceName: spring-cloud-config-client # 注册到consul的服务名称
+        serviceName: ${spring.application.name} # 注册到consul的服务名称
     config:
       discovery:
         enabled: true
@@ -12,6 +14,12 @@ spring:
       name: spring-config  # 对应{application}部分
       profile: dev  # 对应{profile}部分
       label: master  # 对应git的分支，如果配置中心使用的是本地存储，则该参数无用
+#2.x的安全配置，localhost:8552/actuator/refresh
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 #spring.cloud.config.uri：配置中心的具体地址
 #spring.cloud.config.name：对应{application}部分
 #spring.cloud.config.profile：对应{profile}部分
