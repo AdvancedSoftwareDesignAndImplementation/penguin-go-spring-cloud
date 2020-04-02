@@ -1,0 +1,20 @@
+server:
+  port: 8551
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/AdvancedSoftwareDesignAndImplementation/penguin-go-spring-cloud     # 配置git仓库的地址
+          search-paths: config-repository                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username:                                             # git仓库的账号
+          password:                                             # git仓库的密码（公开仓库，不配置）
+#仓库中的配置文件会被转换成相应的WEB接口，访问可以参照以下的规则：
+#/{application}/{profile}[/{label}]
+#/{application}-{profile}.yml
+#/{label}/{application}-{profile}.yml
+#/{application}-{profile}.properties
+#/{label}/{application}-{profile}.properties
+#以spring-config-dev.properties为例子，它的application是spring-config，profile是dev。client会根据填写的参数来选择读取对应的配置

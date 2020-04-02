@@ -1,0 +1,5 @@
+
+*.class
+*.prefs
+spring-cloud-config-server/.classpath
+spring-cloud-config-server/.project
