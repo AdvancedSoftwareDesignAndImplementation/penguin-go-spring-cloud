@@ -31,6 +31,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
+		
+		<dependency>
+	        <groupId>org.springframework.cloud</groupId>
+	        <artifactId>spring-cloud-starter-consul-discovery</artifactId> <!-- 注册中心 -->
+	    </dependency>
 	</dependencies>
 
 	<dependencyManagement>
