@@ -16,6 +16,16 @@ spring:
           search-paths: config-repository                             # git仓库地址下的相对地址，可以配置多个，用,分割。
           username:                                             # git仓库的账号
           password:                                             # git仓库的密码（公开仓库，不配置）
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 #仓库中的配置文件会被转换成相应的WEB接口，访问可以参照以下的规则：
 #/{application}/{profile}[/{label}]
 #/{application}-{profile}.yml

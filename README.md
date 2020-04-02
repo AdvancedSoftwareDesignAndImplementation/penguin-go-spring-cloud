@@ -4,4 +4,8 @@
 #### 软件架构
 软件架构说明
 
+Spring Boot: 2.0.4.RELEASE
+
+Spring Cloud: Finchley.RELEASE
+
 #### 使用说明
